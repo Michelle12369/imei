@@ -1,3 +1,4 @@
+<div class="container">
 <!--存貨量不足的警示-->
 <% @retailinforms.each do |retailinform| %>
   <%if retailinform.r_inventory>retailinform.rop%>
@@ -117,7 +118,6 @@
 
 <button type=button class="btn btn-lg btn-default"><%= link_to "回到首頁" , root_path%></button>
 
-
-
+</div>
 
 
