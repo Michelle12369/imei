@@ -301,7 +301,7 @@
 	#main
 	{
 		position: relative;
-		background: #fff url(https://github.com/Michelle12369/imei/blob/master/app/assets/stylesheets/css/images/overlay.png?raw=true) repeat;
+		background: #fff url(overlay.png) repeat;
 	}
 	
 	.divider
