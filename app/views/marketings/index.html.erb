@@ -8,7 +8,7 @@ $(function () {
 
 <h1>行銷管理</h1>
 
-<table class="table">
+<table class="table table-hover">
   <thead>
     <tr>
       <th >商品編號</th>
@@ -26,15 +26,15 @@ $(function () {
   <tbody>
     <% @marketings.each do |marketing| %>
       <tr>
-       <td class="info"><%= marketing.p_id %></td>
-        <td class="info"><%= marketing.p_name %></td>
-        <td class="info"><%= marketing.r_inventory %></td>
-        <td class="info"><%= marketing.price_origin %></td>
-        <td class="info"><%= marketing.valid_date %></td>
-        <td class="info"><%= marketing.profit %></td>
-        <td class="success"> <%=  marketing.increase%>
+       <td><%= marketing.p_id %></td>
+        <td><%= marketing.p_name %></td>
+        <td><%= marketing.r_inventory %></td>
+        <td><%= marketing.price_origin %></td>
+        <td><%= marketing.valid_date %></td>
+        <td><%= marketing.profit %></td>
+        <td> <%=  marketing.increase%>
       </td>
-        <td class="warning">
+        <td>
         <%= marketing.price%>
         </td>
         <td><%= link_to '秀', marketing %></td>

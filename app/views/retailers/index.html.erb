@@ -85,17 +85,17 @@
   <tbody>
     <% @retailinforms.each do |retailinform| %>
       <tr>
-        <td class="success"><%= retailinform.p_id %></td>
-        <td class="success"><%= retailinform.max_demand %></td>
-        <td class="success"><%= retailinform.min_demand %></td>
-        <td class="success"><%= retailinform.book_cost %></td>
-        <td class="success"><%= retailinform.hold_cost %></td>
-        <td class="success"><%= retailinform.cost %></td>
-        <td class="success"><%= retailinform.price %></td>
-        <td class="info"><%= retailinform.r_inventory %></td>
-        <td class="info"><%= retailinform.eoq.round(2) %></td>
-        <td class="info"><%= retailinform.rop.round(2) %></td>
-        <td class="info"><%if retailinform.r_inventory>retailinform.rop%>
+        <td><%= retailinform.p_id %></td>
+        <td><%= retailinform.max_demand %></td>
+        <td><%= retailinform.min_demand %></td>
+        <td><%= retailinform.book_cost %></td>
+        <td><%= retailinform.hold_cost %></td>
+        <td><%= retailinform.cost %></td>
+        <td><%= retailinform.price %></td>
+        <td><%= retailinform.r_inventory %></td>
+        <td><%= retailinform.eoq.round(2) %></td>
+        <td><%= retailinform.rop.round(2) %></td>
+        <td><%if retailinform.r_inventory>retailinform.rop%>
         ok
         <%else%>
         <div style="color:red" data-toggle="tooltip" title="請趕緊訂購!!" data-placement="left">
