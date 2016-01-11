@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>產品編號</strong>
+  <%= @product.p_id %>
+</p>
+
+<p>
+  <strong>產品名稱</strong>
+  <%= @product.p_name %>
+</p>
+
+<p>
+  <strong>庫存數量</strong>
+  <%= @product.p_inventory %>
+</p>
+
+<p>
+  <strong>製造日期</strong>
+  <%= @product.produce_date %>
+</p>
+
+<p>
+  <strong>成本</strong>
+  <%= @product.cost %>
+</p>
+
+<p>
+  <strong>售價</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>工廠</strong>
+  <%= @product.factory %>
+</p>
+
+<%= link_to '編輯', edit_product_path(@product) %> |
+<%= link_to '回到前一頁', products_path %>

@@ -1,0 +1,39 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>產品編號</th>
+      <th>原料名稱</th>
+      <th>原料成本</th>
+      <th>供應商</th>
+      <th>運送時間(日)</th>
+      <th>訂購數量</th>
+      <th>訂購時間</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @materials.each do |material| %>
+      <tr>
+        <% if material.Result=='小泡芙' && material.quality == 1%>
+        <td><%= material.m_id %></td>
+        <td><%= material.m_name %></td>
+        <td><%= material.m_cost %></td>
+        <td><%= material.supplier %></td>
+        <td><%= material.transportation_time %></td>
+        <td><%= material.number %></td>
+         <td><%= material.updated_at %></td>
+        <td><%= link_to '資料一覽', material %></td>
+        <td><%= link_to '編輯購買量', edit_material_path(material) %></td>
+        
+      <% else %>
+      <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<button type=button class="btn btn-lg btn-default"> <%= link_to '生產系統', products_path %></button>
+<button type=button class="btn btn-lg btn-default"><%= link_to '合格原料表', materials_path %></button>
+<button type=button class="btn btn-lg btn-default"><%= link_to '原料資料庫', data_path %></button>

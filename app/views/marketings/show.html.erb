@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+ <h1>行銷資料</h1>
+<p>
+  <strong>產品編號:</strong>
+  <%= @marketing.p_id %>
+</p>
+
+<p>
+  <strong>產品名稱:</strong>
+  <%= @marketing.p_name %>
+</p>
+
+<p>
+  <strong>存貨量:</strong>
+  <%= @marketing.r_inventory %>
+</p>
+
+<p>
+  <strong>原始價格:</strong>
+  <%= @marketing.price_origin %>
+</p>
+
+<p>
+  <strong>有效日期:</strong>
+  <%= @marketing.valid_date %>
+</p>
+
+<p>
+  <strong>想要增加的銷售量:</strong>
+  <%= @marketing.increase %>
+</p>
+
+<p>
+  <strong>毛利率:</strong>
+  <%= @marketing.profit %>
+</p>
+
+<p>
+  <strong>優惠價格:</strong>
+  <%= @marketing.price %>
+</p>
+
+<%= link_to '編輯', edit_marketing_path(@marketing) %> |
+<%= link_to '回到上一頁', marketings_path %>

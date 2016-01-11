@@ -1,0 +1,56 @@
+<script type="text/javascript">
+    
+$(function () {
+          $('[data-toggle="tooltip"]').tooltip();
+          });
+     
+    </script>
+
+<h1>行銷管理</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th >商品編號</th>
+      <th >商品名稱</th>
+      <th >即將到期的存貨量</th>
+      <th >原始售價</th>
+      <th >有效日期</th>
+      <th >毛利率(%)</th>
+      <th >想要增加的銷售量(%)</th>
+      <th >優惠價格</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @marketings.each do |marketing| %>
+      <tr>
+       <td class="info"><%= marketing.p_id %></td>
+        <td class="info"><%= marketing.p_name %></td>
+        <td class="info"><%= marketing.r_inventory %></td>
+        <td class="info"><%= marketing.price_origin %></td>
+        <td class="info"><%= marketing.valid_date %></td>
+        <td class="info"><%= marketing.profit %></td>
+        <td class="success"> <%=  marketing.increase%>
+      </td>
+        <td class="warning">
+        <%= marketing.price%>
+        </td>
+        <td><%= link_to '秀', marketing %></td>
+        <td ><%= link_to edit_marketing_path(marketing) do%>
+            <div  data-toggle="tooltip" title="請輸入想要增加的銷售量!!" data-placement="top">
+              銷售量輸入
+            </div>
+            <%end%>
+        </td>
+        <td><%= link_to '刪除', marketing, method: :delete, data: { confirm: '確定刪除?' } %></td>
+         </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<button type=button class="btn btn-lg btn-default"><%= link_to '匯入銷售資料', marketing_input_path %></button>
+<button type=button class="btn btn-lg btn-default"><%= link_to "回到首頁" , root_path%></button>

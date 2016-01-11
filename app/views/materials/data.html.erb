@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>原料資料庫</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>原料名稱</th>
+      <th>原料成本</th>
+      <th>供應商</th>
+      <th>供應商住址</th>
+      <th>供應商電話</th>
+      <th>運送時間(日)</th>
+      <th>製成品</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @materials.each do |material| %>
+      <tr>
+        <td><%= material.m_id %></td>
+        <td><%= material.m_name %></td>
+        <td><%= material.m_cost %></td>
+        <td><%= material.supplier %></td>
+        <td><%= material.s_address %></td>
+        <td><%= material.s_phone %></td>
+        <td><%= material.transportation_time %></td>
+        <td><%= material.result %></td>
+        <td><%= link_to 'Show', material %></td>
+        <td><%= link_to 'Edit', edit_material_path(material) %></td>
+        <td><%= link_to 'Destroy', material, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<button type=button class="btn btn-lg btn-default"><%= link_to '新增原料', new_material_path %></button>
+<button type=button class="btn btn-lg btn-default"><%= link_to '生產系統', products_path %></button>
+<button type=button class="btn btn-lg btn-default"><%= link_to '合格原料', materials_path %></button>

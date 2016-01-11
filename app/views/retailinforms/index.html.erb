@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Retailinforms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>P</th>
+      <th>Max demand</th>
+      <th>Min demand</th>
+      <th>R inventory</th>
+      <th>Book cost</th>
+      <th>Hold cost</th>
+      <th>Cost</th>
+      <th>Price</th>
+      <th>Eoq</th>
+      <th>Rop</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @retailinforms.each do |retailinform| %>
+      <tr>
+        <td><%= retailinform.p_id %></td>
+        <td><%= retailinform.max_demand %></td>
+        <td><%= retailinform.min_demand %></td>
+        <td><%= retailinform.r_inventory %></td>
+        <td><%= retailinform.book_cost %></td>
+        <td><%= retailinform.hold_cost %></td>
+        <td><%= retailinform.cost %></td>
+        <td><%= retailinform.price %></td>
+        <td><%= retailinform.eoq %></td>
+        <td><%= retailinform.rop %></td>
+        <td><%= link_to 'Show', retailinform %></td>
+        <td><%= link_to 'Edit', edit_retailinform_path(retailinform) %></td>
+        <td><%= link_to 'Destroy', retailinform, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Retailinform', new_retailinform_path %>

@@ -1,0 +1,37 @@
+<%= form_for(@retailer) do |f| %>
+  <% if @retailer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@retailer.errors.count, "error") %> prohibited this retailer from being saved:</h2>
+
+      <ul>
+      <% @retailer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :產品編號 %><br>
+    <%= f.text_field :p_id %>
+  </div>
+  <div class="field">
+    <%= f.label :產品名稱 %><br>
+    <%= f.text_field :p_name %>
+  </div>
+  <div class="field">
+    <%= f.label :賣出數量 %><br>
+    <%= f.number_field :number_sold %>
+  </div>
+  <div class="field">
+    <%= f.label :進貨量 %><br>
+    <%= f.number_field :number_bought %>
+  </div>
+  <div class="field">
+    <%= f.label :有效日期 %><br>
+    <%= f.date_select :valid_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

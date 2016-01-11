@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  m_id: MyString
+  m_name: MyString
+  m_cost: 1
+  supplier: MyString
+  transportation_time: 1
+  number: 1
+  result: MyString
+  quality: 1
+  s_address: MyString
+  s_phone: 1
+  condition: 1
+
+two:
+  m_id: MyString
+  m_name: MyString
+  m_cost: 1
+  supplier: MyString
+  transportation_time: 1
+  number: 1
+  result: MyString
+  quality: 1
+  s_address: MyString
+  s_phone: 1
+  condition: 1

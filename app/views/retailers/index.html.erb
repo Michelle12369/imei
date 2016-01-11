@@ -1,0 +1,123 @@
+<!--存貨量不足的警示-->
+<% @retailinforms.each do |retailinform| %>
+  <%if retailinform.r_inventory>retailinform.rop%>
+    
+  <%else%>
+  <!--最上方警示-->
+    <div class="alert alert-danger in fade" role="alert">
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+        <span class="sr-only">Close</span>
+      </button>
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+      存貨量太少
+    </div>
+  <!--左方警示-->
+    <script type="text/javascript">
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+          })
+    </script>
+ <%end%>
+<%end%>
+
+<!--警示結束-->
+
+
+<h1>門市庫存管理</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>產品編號</th>
+      <th>產品名稱</th>
+      <th>賣出數量</th>
+      <th>進貨量</th>
+      <th>有效日期</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @retailers.each do |retailer| %>
+      <tr>
+        <td><%= retailer.p_id %></td>
+        <td><%= retailer.p_name %></td>
+        <td><%= retailer.number_sold %></td>
+        <td><%= retailer.number_bought %></td>
+        <td><%= retailer.valid_date %></td>
+        <td><%= link_to '秀', retailer %></td>
+        <td><%= link_to '編輯', edit_retailer_path(retailer) %></td>
+        <td><%= link_to '刪除', retailer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<button type=button class="btn btn-lg btn-default"><%= link_to '新增門市庫存', new_retailer_path %></button>
+
+<h1>庫存基本資料管理</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th >產品編號</th>
+      <th >預估每週最大需求</th>
+      <th >預估每週最小需求</th>
+      <th >訂購成本</th>
+      <th >持有成本</th>
+      <th >總成本</th>
+      <th >售價</th>
+      <th>存貨量</th>
+      <th>EOQ</th>
+      <th>ROP</th>
+      <th>存量狀況</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @retailinforms.each do |retailinform| %>
+      <tr>
+        <td class="success"><%= retailinform.p_id %></td>
+        <td class="success"><%= retailinform.max_demand %></td>
+        <td class="success"><%= retailinform.min_demand %></td>
+        <td class="success"><%= retailinform.book_cost %></td>
+        <td class="success"><%= retailinform.hold_cost %></td>
+        <td class="success"><%= retailinform.cost %></td>
+        <td class="success"><%= retailinform.price %></td>
+        <td class="info"><%= retailinform.r_inventory %></td>
+        <td class="info"><%= retailinform.eoq.round(2) %></td>
+        <td class="info"><%= retailinform.rop.round(2) %></td>
+        <td class="info"><%if retailinform.r_inventory>retailinform.rop%>
+        ok
+        <%else%>
+        <div style="color:red" data-toggle="tooltip" title="請趕緊訂購!!" data-placement="left">
+        Not ok
+        </div>
+        <%end%>
+        </td>
+        <td><%= link_to '秀', retailinform %></td>
+        <td><%= link_to '編輯', edit_retailinform_path(retailinform) %></td>
+        <td><%= link_to '刪除', retailinform, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<button type=button class="btn btn-lg btn-default"><%= link_to '新增庫存基本資料', new_retailinform_path %></button>
+
+<button type=button class="btn btn-lg btn-default"><%= link_to "回到首頁" , root_path%></button>
+
+
+
+
+

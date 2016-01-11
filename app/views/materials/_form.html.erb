@@ -1,0 +1,61 @@
+<%= form_for(@material) do |f| %>
+  <% if @material.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@material.errors.count, "error") %> prohibited this material from being saved:</h2>
+
+      <ul>
+      <% @material.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!--div class="field">
+    <%= f.label :m_id %><br>
+    <%= f.text_field :m_id %>
+  </div>
+  <div class="field">
+    <%= f.label :m_name %><br>
+    <%= f.text_field :m_name %>
+  </div>
+  <div class="field">
+    <%= f.label :m_cost %><br>
+    <%= f.number_field :m_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :supplier %><br>
+    <%= f.text_field :supplier %>
+  </div>
+  <div class="field">
+    <%= f.label :transportation_time %><br>
+    <%= f.number_field :transportation_time %>
+  </div-->
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.number_field :number %>
+  </div>
+  <!--div class="field">
+    <%= f.label :result %><br>
+    <%= f.text_field :result %>
+  </div>
+  <div class="field">
+    <%= f.label :quality %><br>
+    <%= f.number_field :quality %>
+  </div>
+  <div class="field">
+    <%= f.label :s_address %><br>
+    <%= f.text_field :s_address %>
+  </div>
+  <div class="field">
+    <%= f.label :s_phone %><br>
+    <%= f.number_field :s_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :condition %><br>
+    <%= f.number_field :condition %>
+  </div-->
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

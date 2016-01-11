@@ -1,0 +1,57 @@
+<%= form_for(@retailinform) do |f| %>
+  <% if @retailinform.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@retailinform.errors.count, "error") %> prohibited this retailinform from being saved:</h2>
+
+      <ul>
+      <% @retailinform.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :產品編號 %><br>
+    <%= f.text_field :p_id %>
+  </div>
+  <div class="field">
+    <%= f.label :預估最大需求 %><br>
+    <%= f.number_field :max_demand %>
+  </div>
+  <div class="field">
+    <%= f.label :預估最小需求%><br>
+    <%= f.number_field :min_demand %>
+  </div>
+  <!--div class="field">
+    <%= f.label :r_inventory %><br>
+    <%= f.number_field :r_inventory %>
+  </div-->
+  <div class="field">
+    <%= f.label :每單位訂購成本%><br>
+    <%= f.number_field :book_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :每單位持有成本 %><br>
+    <%= f.number_field :hold_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :總成本 %><br>
+    <%= f.number_field :cost %>
+  </div>
+  <div class="field">
+    <%= f.label :售價 %><br>
+    <%= f.number_field :price %>
+  </div>
+  <!--div class="field">
+    <%= f.label :eoq %><br>
+    <%= f.text_field :eoq %>
+  </div>
+  <div class="field">
+    <%= f.label :rop %><br>
+    <%= f.text_field :rop %>
+  </div-->
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

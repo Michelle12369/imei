@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+  <h1>庫存基本資料</h1>
+<p>
+  <strong>產品編號：</strong>
+  <%= @retailinform.p_id %>
+</p>
+
+<p>
+  <strong>預估最大需求：</strong>
+  <%= @retailinform.max_demand %>
+</p>
+
+<p>
+  <strong>預估最小需求:</strong>
+  <%= @retailinform.min_demand %>
+</p>
+
+<p>
+  <strong>每單位訂購成本:</strong>
+  <%= @retailinform.book_cost %>
+</p>
+
+<p>
+  <strong>每單位持有成本:</strong>
+  <%= @retailinform.hold_cost %>
+</p>
+
+<p>
+  <strong>總成本:</strong>
+  <%= @retailinform.cost %>
+</p>
+
+<p>
+  <strong>售價:</strong>
+  <%= @retailinform.price %>
+</p>
+
+
+
+<%= link_to '秀', edit_retailinform_path(@retailinform) %> |
+<%= link_to '回到上一頁', retailers_path %>

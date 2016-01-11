@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  p_id: MyString
+  max_demand: 1
+  min_demand: 1
+  r_inventory: 1
+  book_cost: 1
+  hold_cost: 1
+  cost: 1
+  price: 1
+  eoq: 1.5
+  rop: 1.5
+
+two:
+  p_id: MyString
+  max_demand: 1
+  min_demand: 1
+  r_inventory: 1
+  book_cost: 1
+  hold_cost: 1
+  cost: 1
+  price: 1
+  eoq: 1.5
+  rop: 1.5

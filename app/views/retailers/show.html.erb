@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<h1>門市庫存資料</h1>
+<p>
+  <strong>產品編號:</strong>
+  <%= @retailer.p_id %>
+</p>
+
+<p>
+  <strong>產品名稱:</strong>
+  <%= @retailer.p_name %>
+</p>
+
+<p>
+  <strong>賣出數量:</strong>
+  <%= @retailer.number_sold %>
+</p>
+
+<p>
+  <strong>進貨量:</strong>
+  <%= @retailer.number_bought %>
+</p>
+
+<p>
+  <strong>有效日期:</strong>
+  <%= @retailer.valid_date %>
+</p>
+
+<%= link_to '編輯', edit_retailer_path(@retailer) %> |
+<%= link_to '回到上一頁', retailers_path %>

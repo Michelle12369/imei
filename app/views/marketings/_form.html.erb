@@ -1,0 +1,23 @@
+<%= form_for(@marketing) do |f| %>
+  <% if @marketing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@marketing.errors.count, "error") %> prohibited this marketing from being saved:</h2>
+
+      <ul>
+      <% @marketing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :"想增加的銷售量(%)" %><br>
+    <%= f.text_field :increase %>%
+  </div>
+  
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
