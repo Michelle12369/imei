@@ -301,7 +301,7 @@
 	#main
 	{
 		position: relative;
-		background: #fff url('<%= asset_path("overlay.png") %> ') repeat;
+		background: #fff url('<%= asset_path("images/overlay.png") %> ') repeat;
 	}
 	
 	.divider
