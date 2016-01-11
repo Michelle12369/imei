@@ -27,6 +27,7 @@ def data
 
   # GET /materials/1/edit
   def edit
+
   end
 
   # POST /materials
@@ -48,9 +49,11 @@ def data
   # PATCH/PUT /materials/1
   # PATCH/PUT /materials/1.json
   def update
+     mater="/data"
+    
     respond_to do |format|
       if @material.update(material_params)
-        format.html { redirect_to @material, notice: 'Material was successfully updated.' }
+        format.html { redirect_to mater, notice: 'Material was successfully updated.' }
         format.json { render :show, status: :ok, location: @material }
       else
         format.html { render :edit }
@@ -62,9 +65,10 @@ def data
   # DELETE /materials/1
   # DELETE /materials/1.json
   def destroy
+    mater="/data"
     @material.destroy
     respond_to do |format|
-      format.html { redirect_to materials_url, notice: 'Material was successfully destroyed.' }
+      format.html { redirect_to mater, notice: 'Material was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
