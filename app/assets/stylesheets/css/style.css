@@ -261,8 +261,8 @@
 	#header
 	{
 		position: relative;
-		/*background: #ddd ;*/
-		/*background-size: cover;*/
+		background: #ddd url("https://github.com/Michelle12369/imei/blob/master/app/assets/images/header.jpg?raw=true") no-repeat center;
+		background-size: cover;
 	}
 
 	#logo
