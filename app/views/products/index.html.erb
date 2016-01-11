@@ -1,4 +1,4 @@
-<div class="container">
+
 
 <h1>生產管理</h1>
 <h2>產品清單</h2>
@@ -59,14 +59,14 @@
       <tr> 
         <% if product.p_name == "小泡芙"  %>
         <td><%= product.p_id %></td>
-        <td><%= product.P_Name %></td>
+        <td><%= product.p_name %></td>
         <td><%= product.produce_date %></td>
         <td><%= product.cost %></td>
         <td><%= product.price %></td>
         <td><%= product.factory %></td>
         <td><%= material.supplier %></td>
         <td><%= material.number/2 %>個</td>
-        <td><%= material.updated_at %></td>
+        <td><%= material.updated_at.in_time_zone("Taipei") %></td>
       <% else %>
       <% end %>
     <% end %>
@@ -86,7 +86,7 @@
         <td><%= product.factory %></td>
         <td><%= material.supplier %></td>
         <td><%= material.number/6 %>個</td>
-        <td><%= material.updated_at %></td>
+        <td><%= material.updated_at.in_time_zone("Taipei") %></td>
       <% else %>
       <% end %>
     <% end %>
@@ -99,5 +99,5 @@
 
 
 <button type=button class="btn btn-lg btn-default"><a href="/materials">生產頁</a></button>
+<%= link_to '新產品', new_product_path %>
 <button type=button class="btn btn-lg btn-default"><%= link_to '回首頁', root_path %></button>
-</div>

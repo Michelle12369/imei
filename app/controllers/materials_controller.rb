@@ -6,7 +6,15 @@ class MaterialsController < ApplicationController
   def index
     @materials = Material.all
   end
-
+def data
+    @materials = Material.all
+  end
+  def a
+    @materials = Material.all
+  end
+  def b
+    @materials = Material.all
+  end
   # GET /materials/1
   # GET /materials/1.json
   def show

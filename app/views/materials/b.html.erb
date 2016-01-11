@@ -15,7 +15,7 @@
   <tbody>
     <% @materials.each do |material| %>
       <tr>
-        <% if material.Result=='牛奶' && material.quality == 1%>
+        <% if material.result=='牛奶' && material.quality == 1%>
         <td><%= material.m_id %></td>
         <td><%= material.m_name %></td>
         <td><%= material.m_cost %></td>
