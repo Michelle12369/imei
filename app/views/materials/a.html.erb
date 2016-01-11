@@ -22,7 +22,7 @@
         <td><%= material.supplier %></td>
         <td><%= material.transportation_time %></td>
         <td><%= material.number %></td>
-         <td><%= material.updated_at %></td>
+         <td><%= material.updated_at.in_time_zone("Taipei") %></td>
         <td><%= link_to '資料一覽', material %></td>
         <td><%= link_to '編輯購買量', edit_material_path(material) %></td>
         
